@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query("SELECT MAX(p.createdAt) FROM Product p")
-    LocalDateTime lastProductUpdate();
+    LocalDateTime lastProductCreatedDate();
 
     @Query("SELECT p FROM Product p")
     Page<Product> findAllProductsPaged(Pageable pageable);
