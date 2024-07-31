@@ -26,7 +26,10 @@ public class PaymentController {
     public ResponseEntity<List<PaymentType>> getPaymentTypes(){
         return ResponseEntity
                 .ok()
-                .cacheControl(CacheControl.maxAge(30, TimeUnit.MINUTES))
+                .cacheControl(CacheControl
+                        .maxAge(30, TimeUnit.MINUTES)
+                        .cachePublic()
+                        .immutable())
                 .body(paymentTypeService.getAllPaymentTypes());
     }
 
