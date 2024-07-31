@@ -31,8 +31,8 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    public LocalDateTime getLastUpdatedProduct(){
-        return productRepository.lastProductUpdate();
+    public LocalDateTime getLastCreatedProduct(){
+        return productRepository.lastProductCreatedDate();
     }
 
 }
